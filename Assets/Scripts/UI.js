@@ -1,7 +1,7 @@
 #pragma strict
 
 function StartNewGame() {
-	Application.LoadLevel(4);
+	Application.LoadLevel(5);
 }
 
 function ContinueGame() {
