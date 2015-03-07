@@ -22,6 +22,11 @@ function Start() {
 	Application.LoadLevel(nextscene);
 }
 
+function Update () {
+  if (Input.GetKeyDown (KeyCode.Escape))
+  	Application.LoadLevel(nextscene);
+}
+
 
 
 function Fademat(curentmat: Material, timer: float, fadeType: Fade) {
