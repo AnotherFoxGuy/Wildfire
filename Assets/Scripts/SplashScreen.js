@@ -27,8 +27,6 @@ function Update () {
   	Application.LoadLevel(nextscene);
 }
 
-
-
 function Fademat(curentmat: Material, timer: float, fadeType: Fade) {
 	var start = fadeType == Fade.In ? 0.0 : 1.0;
 	var end = fadeType == Fade.In ? 1.0 : 0.0;
@@ -40,7 +38,6 @@ function Fademat(curentmat: Material, timer: float, fadeType: Fade) {
 		yield;
 	}
 }
-
 
 function playAni() {
   var time : float = 0;

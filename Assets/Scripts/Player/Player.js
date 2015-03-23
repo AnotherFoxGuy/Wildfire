@@ -2,7 +2,7 @@
 
 public var MaxSpeed = 7;
 public var fire : GameObject;
-public var SpawnFire = true;
+public var SpawnsFire = true;
 
 private var thisRigidbody : Rigidbody2D;
 private var jump = true;
@@ -18,6 +18,16 @@ function Start() {
 
 function Update() {
 	UpdateCheats();
+	var pt = Vector2(this.transform.position.x, this.transform.position.y - 0.2);
+	var results = new RaycastHit2D[10];
+	if (Physics2D.RaycastNonAlloc(pt, Vector2(0, 1), results, 2, layerMask) > 0) {
+		for (var hit: RaycastHit2D in results) {
+			if (hit.collider != null) {
+				if (hit.collider.tag == "DamageFire")
+					SpawnFire(hit.point);
+			}
+		}
+	}
 	if (Input.GetButtonDown("Jump")) {
 		var PosTMP = Vector2(this.transform.position.x, this.transform.position.y - 0.51);
 		if (jump) {
@@ -38,18 +48,22 @@ function Update() {
 }
 
 function OnCollisionStay2D(collisionInfo: Collision2D) {
-	if (SpawnFire) {
-		for (var contact: ContactPoint2D in collisionInfo.contacts) {
-			var clone: GameObject;
-			clone = Instantiate(fire, contact.point, Quaternion.identity); //
-			Destroy(clone, Random.Range(20, 25));
-		}
+	for (var contact: ContactPoint2D in collisionInfo.contacts) {
+		SpawnFire(contact.point);
+	}
+}
+
+
+function SpawnFire(pos: Vector3) {
+	if (SpawnsFire) {
+		var clone: GameObject;
+		clone = Instantiate(fire, pos, Quaternion.identity); //
+		Destroy(clone, Random.Range(20, 25));
 	}
 }
 
 function OnCollisionEnter2D(collisionInfo: Collision2D) {
 	jump = true;
-
 }
 
 function UpdateCheats() {
@@ -74,7 +88,7 @@ function UpdateCheats() {
 		CheatDelay = 1.0;
 	} else if (GodModeProgress == 4 && Input.GetKeyDown('r')) {
 		GodModeProgress = 0;
-		SpawnFire = !SpawnFire;
-		print("SpawnFire "+SpawnFire);
+		SpawnsFire = !SpawnsFire;
+		print("SpawnFire " + SpawnFire);
 	}
 }
