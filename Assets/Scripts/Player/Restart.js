@@ -1,6 +1,7 @@
-﻿#pragma strict
+#pragma strict
 
-function OnTriggerEnter2D (otherObj : Collider2D) {
+function OnTriggerStay2D (otherObj : Collider2D) {
+	print("Col"+otherObj);
 	if (otherObj.tag == "Player") {
 		Application.LoadLevel(Application.loadedLevel);
 	}

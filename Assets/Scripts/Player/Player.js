@@ -24,7 +24,7 @@ function Update() {
 		for (var hit: RaycastHit2D in results) {
 			if (hit.collider != null) {
 				if (hit.collider.tag == "DamageFire")
-					SpawnFire(hit.point);
+					SpawnFire(hit.point,hit.transform.gameObject );
 			}
 		}
 	}
@@ -49,15 +49,16 @@ function Update() {
 
 function OnCollisionStay2D(collisionInfo: Collision2D) {
 	for (var contact: ContactPoint2D in collisionInfo.contacts) {
-		SpawnFire(contact.point);
+		SpawnFire(contact.point, collisionInfo.gameObject);
 	}
 }
 
 
-function SpawnFire(pos: Vector3) {
+function SpawnFire(pos: Vector3, g: GameObject) {
 	if (SpawnsFire) {
 		var clone: GameObject;
 		clone = Instantiate(fire, pos, Quaternion.identity); //
+    clone.transform.parent = g.transform;
 		Destroy(clone, Random.Range(20, 25));
 	}
 }

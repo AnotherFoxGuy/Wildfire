@@ -18,6 +18,7 @@ function Update() {
 						hit.collider.GetComponent.<Rigidbody2D>().isKinematic = false;
 					if (hit.collider.GetComponent(HingeJoint2D) != null)
 						hit.collider.GetComponent(HingeJoint2D).enabled = false;
+          //Destroy(this.gameObject);
 				}
 			}
 		}
