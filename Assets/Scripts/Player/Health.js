@@ -1,9 +1,8 @@
-﻿#pragma strict
+#pragma strict
 
 public var Health = 100;
 public var HealthSub = 5;
 public var GodMode = false;
-
 
 private var Fire: ParticleSystem;
 private var GodModeProgress = 0;

@@ -8,14 +8,14 @@ function Update() {
 	if (Physics2D.RaycastNonAlloc(PosTMP, Vector2(0, 1), results, 2, layerMask) > 0) {
 		for (var hit: RaycastHit2D in results) {
 			if (hit.collider != null) {
-				var GOColor: Color = hit.collider.GetComponent.<Renderer>().material.color;
+				var GOColor: Color = hit.collider.GetComponent(Renderer).material.color;
 				if (GOColor.r > 0 || GOColor.g > 0 || GOColor.b > 0) {
 					var cc: float = Time.deltaTime / 50;
 					GOColor = Color(GOColor.r - cc, GOColor.g - cc, GOColor.b - cc);
-					hit.collider.GetComponent.<Renderer>().material.color = GOColor;
+					hit.collider.GetComponent(Renderer).material.color = GOColor;
 				} else {
-					if (hit.collider.GetComponent.<Rigidbody2D>() != null)
-						hit.collider.GetComponent.<Rigidbody2D>().isKinematic = false;
+					if (hit.collider.GetComponent(Rigidbody2D) != null)
+						hit.collider.GetComponent(Rigidbody2D).isKinematic = false;
 					if (hit.collider.GetComponent(HingeJoint2D) != null)
 						hit.collider.GetComponent(HingeJoint2D).enabled = false;
           //Destroy(this.gameObject);

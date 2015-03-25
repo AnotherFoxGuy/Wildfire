@@ -1,11 +1,10 @@
 #pragma strict
-var mat: Material;
 
+var mat: Material;
 var fadeTime = 1.0;
 var nextscene = 1;
 var frames : Sprite[];
 var framesPerSecond = 10;
-
 
 enum Fade {
 	In, Out

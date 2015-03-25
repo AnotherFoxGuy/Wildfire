@@ -1,7 +1,7 @@
 #pragma strict
 
-public var MovementSpeed = 1f;
-public var Throwable: GameObject;
+var MovementSpeed = 1f;
+var Throwable: GameObject;
 
 private var One = 1;
 private var HitPoint: RaycastHit;
@@ -9,7 +9,6 @@ private var MoveTo = 1;
 private var Player: GameObject;
 private var CoinsFound = 0;
 private var Timer : float = 0;
-
 
 
 function Start() {

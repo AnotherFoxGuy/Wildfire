@@ -4,7 +4,6 @@ var  slider : UI.Slider;
 var  UI_text : UI.Text;
 
 function Start() {
-	slider.maxValue = 8;
 	UI_text.text = "load Level: " + slider.value;
 }
 
