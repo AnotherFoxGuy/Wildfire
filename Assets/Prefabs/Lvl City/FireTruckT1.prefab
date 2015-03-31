@@ -29,6 +29,7 @@ GameObject:
   - 61: {fileID: 6113718}
   - 114: {fileID: 11488758}
   - 50: {fileID: 5025202}
+  - 114: {fileID: 11454612}
   m_Layer: 15
   m_Name: FireTruckT1
   m_TagString: DamageFire
@@ -131,6 +132,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   BlinkSpeed: 4
+--- !u!114 &11454612
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 172898}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6ac9c18a126a64e90a8a51e03d7232, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GameObject: {fileID: 128612, guid: 0cd5d52bd705be24598214af58f28daa, type: 2}
 --- !u!114 &11473980
 MonoBehaviour:
   m_ObjectHideFlags: 1

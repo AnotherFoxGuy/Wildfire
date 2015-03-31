@@ -12,6 +12,7 @@ GameObject:
   - 61: {fileID: 6189438}
   - 50: {fileID: 5089438}
   - 114: {fileID: 11452686}
+  - 114: {fileID: 11432858}
   m_Layer: 15
   m_Name: CarT1
   m_TagString: DamageFire
@@ -59,6 +60,18 @@ BoxCollider2D:
   m_Offset: {x: 0, y: .016320467}
   serializedVersion: 2
   m_Size: {x: 3.19333339, y: 1.44735909}
+--- !u!114 &11432858
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 189438}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6ac9c18a126a64e90a8a51e03d7232, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GameObject: {fileID: 128612, guid: 0cd5d52bd705be24598214af58f28daa, type: 2}
 --- !u!114 &11452686
 MonoBehaviour:
   m_ObjectHideFlags: 1

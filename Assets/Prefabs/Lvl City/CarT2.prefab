@@ -12,6 +12,7 @@ GameObject:
   - 61: {fileID: 6188174}
   - 50: {fileID: 5077346}
   - 114: {fileID: 11432474}
+  - 114: {fileID: 11479106}
   m_Layer: 15
   m_Name: CarT2
   m_TagString: DamageFire
@@ -72,6 +73,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Move: 20
   MoveDirection: 0
+--- !u!114 &11479106
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 159492}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6ac9c18a126a64e90a8a51e03d7232, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GameObject: {fileID: 128612, guid: 0cd5d52bd705be24598214af58f28daa, type: 2}
 --- !u!212 &21259942
 SpriteRenderer:
   m_ObjectHideFlags: 1

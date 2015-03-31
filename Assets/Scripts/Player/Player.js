@@ -14,6 +14,7 @@ function Start() {
 	this.transform.position = Vector3(0, 0, -5);
 	thisRigidbody = this.GetComponent(Rigidbody2D);
 	PlayerPrefs.SetInt("LastLevel", Application.loadedLevel);
+	print("LastLevel " + Application.loadedLevel);
 }
 
 function Update() {
