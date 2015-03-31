@@ -4,7 +4,7 @@ public var fire : GameObject;
 private var Player: GameObject;
 
 function Start() {
-	Player = GameObject.Find("Player");
+	//Player = GameObject.Find("Player");
 }
 
 function Update () {
@@ -14,7 +14,7 @@ function Update () {
 			print("exp");
       exp = true;
 			var clone: GameObject;
-			clone = Instantiate(fire,  Player.transform.position, Quaternion.identity);
+			clone = Instantiate(fire,  this.transform.position, Quaternion.identity);
 			Destroy(clone, 5);
 		}
 	}
