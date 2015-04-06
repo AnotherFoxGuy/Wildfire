@@ -18,16 +18,12 @@ function Update() {
 		Application.LoadLevel(Application.loadedLevel);
 }
 
-function ApplyDamage (damage : float) {
-	Health -= damage;
-}
-
 function OnTriggerEnter2D(otherObj: Collider2D) {
 	if (otherObj.tag == "Flying") {
 		Health = Health - HealthSub;
 		Fire.emissionRate = Health;
 	} else if (otherObj.tag == "Health") {
-		Health += 20;
+		Health = Health + 20;
 		Destroy(otherObj.gameObject);
 	}
 }
